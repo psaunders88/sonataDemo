@@ -87,4 +87,44 @@ class Event
     {
         return $this->date;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add posts
+     *
+     * @param \Acme\DemoBundle\Entity\Post $posts
+     * @return Event
+     */
+    public function addPost(\Acme\DemoBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \Acme\DemoBundle\Entity\Post $posts
+     */
+    public function removePost(\Acme\DemoBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
 }

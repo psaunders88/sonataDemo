@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class PostAdmin extends Admin
 {
+    
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -18,8 +19,9 @@ class PostAdmin extends Admin
             ->add('body') //if no type is specified, SonataAdminBundle tries to guess it
             ->add('event','sonata_type_model_list', array(
             ), array(
-                'placeholder' => 'No author selected'
+                'placeholder' => 'No event selected'
             ))
+            ->add('image', 'sonata_type_model_list', array(), array('link_parameters' => array('context' => 'default')));
         ;
     }
 

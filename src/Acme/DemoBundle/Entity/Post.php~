@@ -38,6 +38,11 @@ class Post
     protected $event;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"all"}, fetch="EAGER")
+     */
+    protected $image;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -114,5 +119,28 @@ class Post
     public function getBody()
     {
         return $this->body;
+    }
+
+    /**
+     * Set event
+     *
+     * @param \Acme\DemoBundle\Entity\Event $event
+     * @return Post
+     */
+    public function setEvent(\Acme\DemoBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Acme\DemoBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }
