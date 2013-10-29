@@ -2,7 +2,7 @@
     "name": "psaunders88/sonata-demo",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "A test project to make working configured examples of the sonata adminbundle and the sonata media bundle",
     "autoload": {
         "psr-0": { "": "src/" }
     },
